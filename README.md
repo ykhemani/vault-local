@@ -1,4 +1,4 @@
-# Run Vault locally for quick ad hoc demos.
+# Run Vault locally for quick ad hoc demos and testing.
 
 Sometimes you need a short-lived [HashiCorp](https://hashicorp.com) [Vault](https://vaultproject.io) cluster to develop or validate a policy, an auth method or a secret engine configuration.
 
