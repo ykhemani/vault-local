@@ -170,8 +170,9 @@ Last WAL                27
 
 Note that in the example above, I've used a TLS certificate with the common name `vault.example.com` and that I have added an entry for `vault.example.com` pointing to `127.0.0.1` in my `/etc/hosts` file.
 
-### Customizations
+## Customizations
 
+### TLS Support
 This repo provides supports for running Vault with TLS certificates. To run Vault with TLS enabled, set the following environment variables prior to running Vault.
 
 I set these via a file called `venv`, which is listed in the [.gitignore](.gitignore) so that it doesn't get added to the repo.
@@ -197,13 +198,18 @@ export TLS_CERTIFICATE="/etc/ssl/certs/fullchain.pem"
 export VAULT_FQDN="vault.example.com"
 ```
 
+### Vault Enterprise Support
 This repo also supports running Vault Enterprise. To apply your Vault license, set the following environment variable prior to running Vault.
 
 ```
 export vault_license=<vault license>
 ```
 
-As mentioned above, `vault.sh` expects to find the `vault` binary at `/usr/local/bin/vault`. You may override this by setting the path to the `vault` binary via the `VAULT` environment variable. For example:
+### Specifying the Vault Binary Location
+As mentioned above, [vault.sh](bin/vault.sh) expects to find the `vault` binary at `/usr/local/bin/vault`. You may override this by setting the path to the `vault` binary via the `VAULT` environment variable. This is useful when you need to test different versions of Vault instsalled at different paths. For example:
 ```
-export VAULT=/usr/bin/vault
+export VAULT=/usr/local/bin/vault-1.5.7
 ```
+
+## Testing
+The [vault.sh](bin/vault.sh) script has been tested on macOS 10.15.6 with [Vault Enterprise 1.6.2](https://releases.hashicorp.com/vault/1.6.2+ent/vault_1.6.2+ent_darwin_amd64.zip).
