@@ -1,0 +1,9 @@
+venv
+conf
+log
+audit
+audit-raw
+raft
+plugins
+vaultrc
+init_keys
