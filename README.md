@@ -2,9 +2,9 @@
 
 Sometimes you need a short-lived [HashiCorp](https://hashicorp.com) [Vault](https://vaultproject.io) cluster to develop or validate a policy, an auth method or a secret engine configuration.
 
-There are many ways to do this. The [vault.sh](vault.sh) script provided in this repository allows you to quickly spin up a Vault server in a fairly painless manner.
+There are many ways to do this. The [vault.sh](bin/vault.sh) script provided in this repository allows you to quickly spin up a Vault server in a fairly painless manner.
 
-More specifically, [vault.sh](vault.sh) will:
+More specifically, [vault.sh](bin/vault.sh) will:
 * Stop vault if it is already running on the host where you are running this script.
 * Remove any existing data, logs, config files and audit logs. The result is that you will have a clean Vault server bootstrapped.
 * Create the required directories for housing the configuration, log file, and audit logs.
